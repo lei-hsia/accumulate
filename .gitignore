@@ -1,0 +1,3 @@
+# Project exclude paths
+/kafka-producer-demo/target/
+/test-demo/target/
