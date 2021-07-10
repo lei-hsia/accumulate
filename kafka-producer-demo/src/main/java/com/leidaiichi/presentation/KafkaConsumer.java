@@ -827,20 +827,20 @@ public class KafkaConsumer<K, V> implements Consumer<K, V> {
     // visible for testing
     KafkaConsumer(LogContext logContext,
                   String clientId,
-                  ConsumerCoordinator coordinator,
+                  ConsumerCoordinator coordinator, // 3
                   Deserializer<K> keyDeserializer,
                   Deserializer<V> valueDeserializer,
                   Fetcher<K, V> fetcher,
                   ConsumerInterceptors<K, V> interceptors,
                   Time time,
-                  ConsumerNetworkClient client,
+                  ConsumerNetworkClient client, // 1
                   Metrics metrics,
-                  SubscriptionState subscriptions,
+                  SubscriptionState subscriptions, // 2
                   ConsumerMetadata metadata,
                   long retryBackoffMs,
                   long requestTimeoutMs,
                   int defaultApiTimeoutMs,
-                  List<ConsumerPartitionAssignor> assignors,
+                  List<ConsumerPartitionAssignor> assignors, // 4
                   String groupId) {
         this.log = logContext.logger(getClass());
         this.clientId = clientId;
